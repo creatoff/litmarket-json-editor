@@ -5,7 +5,7 @@ const initialState: State = {
   rows: [
     { name: 'name2', value: 'value2' },
     { name: 'name3', value: 'value3' },
-    { name: 'name4', value: 'value4' }
+    { name: 'name4', value: 'value4' },
   ],
 };
 
@@ -19,9 +19,12 @@ const rowsSlice = createSlice({
     deleteRow: (state, action: PayloadAction<number>) => {
       state.rows.splice(action.payload, 1);
     },
-    moveRow: (state, action: PayloadAction<{ index: number; direction: 1 | -1 }>) => {
+    moveRow: (
+      state,
+      action: PayloadAction<{ index: number; direction: 1 | -1 }>,
+    ) => {
       const { index, direction } = action.payload;
-      const [ movedRow ] = state.rows.splice(index, 1);
+      const [movedRow] = state.rows.splice(index, 1);
       state.rows.splice(index + direction, 0, movedRow);
     },
     setRows: (state, action: PayloadAction<Row[]>) => {
@@ -33,7 +36,8 @@ const rowsSlice = createSlice({
   },
 });
 
-export const { addRow, deleteRow, moveRow, setRows, clearRows } = rowsSlice.actions;
+export const { addRow, deleteRow, moveRow, setRows, clearRows } =
+  rowsSlice.actions;
 
 const store = configureStore({
   reducer: {

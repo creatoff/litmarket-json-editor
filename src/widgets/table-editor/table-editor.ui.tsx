@@ -1,17 +1,17 @@
-import { Fragment, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Close, ArrowUpward, ArrowDownward } from "@mui/icons-material";
-import { deleteRow, moveRow, setRows, RootState } from "~app/store";
+import { Fragment, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Close, ArrowUpward, ArrowDownward } from '@mui/icons-material';
+import { deleteRow, moveRow, setRows, RootState } from '~app/store';
 import type { Columns } from '~shared/types';
 
-import classes from "./table-editor.module.scss";
+import classes from './table-editor.module.scss';
 
 export function TableEditor() {
   const dispatch = useDispatch();
   const rows = useSelector((state: RootState) => state.rows.rows);
   const [editingRowIndex, setEditingRowIndex] = useState<number | null>(null);
   const [editingColumn, setEditingColumnType] = useState<Columns | null>(null);
-  const [inputText, setInputText] = useState("");
+  const [inputText, setInputText] = useState('');
 
   const handleDeleteRow = (index: number) => {
     dispatch(deleteRow(index));
@@ -40,7 +40,7 @@ export function TableEditor() {
 
     setEditingRowIndex(null);
     setEditingColumnType(null);
-    setInputText("");
+    setInputText('');
   };
 
   if (rows.length === 0) {
@@ -58,11 +58,10 @@ export function TableEditor() {
       <div className={classes.th}></div>
       {rows.map((row, index) => (
         <Fragment key={index}>
-          {["name", "value"].map((columnType) => (
+          {['name', 'value'].map((columnType) => (
             <div key={`${index}${columnType}`} className={classes.td}>
               <div className={classes.cell}>
-                {editingRowIndex === index &&
-                editingColumn === columnType ? (
+                {editingRowIndex === index && editingColumn === columnType ? (
                   <>
                     <input
                       type="text"
@@ -85,7 +84,7 @@ export function TableEditor() {
                         handleEditCell(
                           index,
                           columnType as keyof typeof row,
-                          row[columnType as keyof typeof row]
+                          row[columnType as keyof typeof row],
                         )
                       }
                     >

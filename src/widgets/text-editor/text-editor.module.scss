@@ -1,60 +1,59 @@
 .container {
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    padding: 24px;
-    gap: 24px;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  padding: 24px;
+  gap: 24px;
 }
 
 @media (max-width: 768px) {
-    .container {
-        height: auto;
-    }
+  .container {
+    height: auto;
+  }
 }
 
 .toolbar {
-    display: flex;
-    justify-content: flex-start;
-    gap: 16px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 16px;
 }
 
 @media (max-width: 768px) {
-    .toolbar {
-        justify-content: center;
-        order: 1;
-    }
+  .toolbar {
+    justify-content: center;
+    order: 1;
+  }
 }
 
 .textarea {
-    flex: 1 1 auto;
-    position: relative;
+  flex: 1 1 auto;
+  position: relative;
 
-    &__input {
-        position: absolute;
-        inset: 0;
-        padding: 16px;
-        border: 1px solid #eee;
-        border-radius: 8px;
-        font-family: "Roboto Mono";
-    }
+  &__input {
+    position: absolute;
+    inset: 0;
+    padding: 16px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    font-family: "Roboto Mono";
+  }
 }
 
 @media (max-width: 768px) {
-    .textarea {    
-        &__input {
-            position: static;
-            inset: initial;
-            width: 100%;
-            padding: 16px;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            font-family: "Roboto Mono";
-        }
+  .textarea {
+    &__input {
+      position: static;
+      inset: initial;
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      font-family: "Roboto Mono";
     }
+  }
 }
 
-
 .error {
-    color: #d00;
-    font-size: 14px;
+  color: #d00;
+  font-size: 14px;
 }

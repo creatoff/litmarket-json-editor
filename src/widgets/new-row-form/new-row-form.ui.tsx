@@ -18,10 +18,7 @@ export function NewRowForm() {
   };
 
   return (
-    <form
-      className={classes.container}
-      onSubmit={handleAddRow}
-    >
+    <form className={classes.container} onSubmit={handleAddRow}>
       <div className={classes.section}>
         <label htmlFor="name">Name</label>
         <input
@@ -45,4 +42,4 @@ export function NewRowForm() {
       <Button type="submit">Add table row</Button>
     </form>
   );
-};
+}

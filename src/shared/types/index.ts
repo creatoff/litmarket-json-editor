@@ -4,4 +4,4 @@ export type State = {
   rows: Row[];
 };
 
-export type Columns = "name" | "value";
+export type Columns = 'name' | 'value';

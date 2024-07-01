@@ -5,7 +5,7 @@ import { Button } from '~shared/ui/button';
 
 import classes from './text-editor.module.scss';
 
-export function TextEditor () {
+export function TextEditor() {
   const dispatch = useDispatch();
   const rows = useSelector((state: RootState) => state.rows.rows);
   const [json, setJson] = useState(JSON.stringify(rows, null, 2));
@@ -44,7 +44,8 @@ export function TextEditor () {
       </div>
       {error && <div className={classes.error}>{error.message}</div>}
       <div className={classes.textarea}>
-        <textarea className={classes.textarea__input}
+        <textarea
+          className={classes.textarea__input}
           rows={5}
           value={json}
           onChange={handleJsonChange}
@@ -52,4 +53,4 @@ export function TextEditor () {
       </div>
     </div>
   );
-};
+}
